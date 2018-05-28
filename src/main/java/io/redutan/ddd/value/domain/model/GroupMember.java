@@ -12,6 +12,9 @@ import javax.persistence.Enumerated;
 @Value
 public class GroupMember {
     private String name;
+    /**
+     * ORM과 상태로서의 열거형 객체 : ORM and Enum-as-State Objects
+     */
     @Enumerated(EnumType.STRING)
     private GroupMemberType type;
 
