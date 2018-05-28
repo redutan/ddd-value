@@ -1,7 +1,7 @@
 package io.redutan.ddd.value.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
 import lombok.Value;
 
 import javax.persistence.Embeddable;
@@ -24,6 +24,8 @@ public class GroupMember {
         this.type = null;
     }
 
+    // For Jackson
+    @JsonCreator
     public GroupMember(@JsonProperty("name") String name, @JsonProperty("type") GroupMemberType type) {
         this.name = name;
         this.type = type;
