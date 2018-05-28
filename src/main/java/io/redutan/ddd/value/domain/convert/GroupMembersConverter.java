@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.redutan.ddd.value.domain.model.GroupMember;
-import org.springframework.dao.DataAccessException;
 import org.springframework.orm.jpa.JpaSystemException;
 
 import javax.persistence.AttributeConverter;
@@ -28,7 +27,8 @@ public class GroupMembersConverter implements AttributeConverter<Set<GroupMember
     @Override
     public Set<GroupMember> convertToEntityAttribute(String dbData) {
         try {
-            return om.readValue(dbData, new TypeReference<Set<GroupMember>>(){});
+            return om.readValue(dbData, new TypeReference<Set<GroupMember>>() {
+            });
         } catch (IOException e) {
             throw new JpaSystemException(new RuntimeException(e));
         }

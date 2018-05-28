@@ -1,11 +1,13 @@
 package io.redutan.ddd.value.domain.model;
 
 import io.redutan.ddd.value.domain.IdentifiedValueObject;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "GROUP2_MEMBERS")

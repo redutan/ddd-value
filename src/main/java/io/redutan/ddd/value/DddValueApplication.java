@@ -23,7 +23,7 @@ public class DddValueApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         Group group = new Group("설명", "이름", Arrays.asList(
                 new GroupMember("그룹1", GroupMemberType.GROUP),
                 new GroupMember("그룹회원", GroupMemberType.MEMBER)));
